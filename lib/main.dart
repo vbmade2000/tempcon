@@ -40,6 +40,7 @@ class TempConAppState extends State<TempConApp> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   controller: this.cTextController,
                   autofocus: true,
                   decoration: const InputDecoration(
@@ -86,6 +87,7 @@ class TempConAppState extends State<TempConApp> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   controller: fTextController,
                   decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
