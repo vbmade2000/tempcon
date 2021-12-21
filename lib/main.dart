@@ -29,6 +29,13 @@ class TempConAppState extends State<TempConApp> {
 
     return MaterialApp(
       title: "Temperature Converter",
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+            .copyWith(secondary: Colors.green),
+        textTheme: TextTheme(
+          bodyText2: TextStyle(color: Colors.purple),
+        ),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Temperature Converter"),
