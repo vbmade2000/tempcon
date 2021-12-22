@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:string_validator/string_validator.dart" as validator;
 
+import './about.dart';
+
 void main() {
   return runApp(TempConApp());
 }
@@ -28,6 +30,10 @@ class TempConAppState extends State<TempConApp> {
     this.fTextController.text = 0.toString();
 
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/about': (context) => AboutPage(),
+      },
       title: "Temperature Converter",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
@@ -38,8 +44,24 @@ class TempConAppState extends State<TempConApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Temperature Converter"),
-        ),
+            title: Text(
+              "Temperature Converter",
+            ),
+            actions: [
+              PopupMenuButton(
+                  onSelected: null,
+                  itemBuilder: (context) => [
+                        PopupMenuItem<int>(
+                          value: 0,
+                          child: TextButton(
+                            child: Text("About"),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed("/about");
+                            },
+                          ),
+                        ),
+                      ])
+            ]),
         body: Container(
           child: Column(
             children: [
